@@ -1,0 +1,7 @@
+
+
+build:
+	docker build --build-arg redis_version=4.0.9 -t registry.appgrowth.com/test/redis-cluster .
+
+push:
+	docker push registry.appgrowth.com/test/redis-cluster

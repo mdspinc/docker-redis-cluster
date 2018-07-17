@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install system dependencies
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -yqq \
-      net-tools supervisor ruby rubygems locales gettext-base wget && \
+    net-tools supervisor ruby rubygems locales gettext-base wget && \
     apt-get clean -yqq
 
 # # Ensure UTF-8 lang and locale
@@ -46,7 +46,7 @@ COPY ./docker-data/generate-supervisor-conf.sh /generate-supervisor-conf.sh
 
 RUN chmod 755 /docker-entrypoint.sh
 
-EXPOSE 7000 7001 7002 7003 7004 7005 7006 7007
+EXPOSE 19000 19001 19002 19003 19004 19005 19006 19007
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["redis-cluster"]
